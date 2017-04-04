@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dummy</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <%= link_to "Dummy App", "/" %>
+      <nav>
+        <ul>
+          <li><%= link_to "Home", root_path %></li>
+          <% if logged_in? %>
+            <li><%= link_to "Sign out", miniauth.logout_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to "Sign in", miniauth.login_path %></li>
+          <% end %>
+        </ul>
+      </nav>
+    </header>
+    <%= yield %>
+  </body>
+</html>

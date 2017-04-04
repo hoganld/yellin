@@ -1,0 +1,5 @@
+Welcome to <%= Miniauth.app_name %>
+
+To activate your account, click here:
+
+<%= edit_account_activation_url(@user.activation_token, email: @user.email) %>
