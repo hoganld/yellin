@@ -118,8 +118,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  yellin!
   sqlite3
+  yellin!
 
 BUNDLED WITH
    1.14.6
