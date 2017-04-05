@@ -1,10 +1,10 @@
-module Briscoe
+module Yellin
   class Engine < ::Rails::Engine
-    isolate_namespace Briscoe
+    isolate_namespace Yellin
 
-    initializer 'briscoe.action_controller' do |app|
+    initializer 'yellin.action_controller' do |app|
       ActiveSupport.on_load :action_controller do
-        helper Briscoe::SessionsHelper
+        helper Yellin::SessionsHelper
       end
     end
   end

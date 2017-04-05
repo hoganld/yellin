@@ -1,9 +1,9 @@
-require_dependency "briscoe/application_controller"
+require_dependency "yellin/application_controller"
 
-module Briscoe
+module Yellin
   class AccountActivationsController < ApplicationController
     def edit
-      @user = Briscoe.user_class.find_by(email: params[:email])
+      @user = Yellin.user_class.find_by(email: params[:email])
       if @user && !@user.activated? && @user.authenticated?(:activation, params[:id])
         @user.activate
         log_in @user

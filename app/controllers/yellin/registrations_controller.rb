@@ -1,11 +1,11 @@
-require_dependency "briscoe/application_controller"
+require_dependency "yellin/application_controller"
 
-module Briscoe
+module Yellin
   class RegistrationsController < ApplicationController
     REGISTRATION_MESSAGE = "Please check your email to activate your account."
 
     def create
-      @user = Briscoe.user_class.new(signup_params)
+      @user = Yellin.user_class.new(signup_params)
       if @user.save
         @user.send_activation_email
         flash[:info] = REGISTRATION_MESSAGE
@@ -16,7 +16,7 @@ module Briscoe
     end
 
     def new
-      @user = Briscoe.user_class.new
+      @user = Yellin.user_class.new
     end
 
     def after_create
@@ -25,7 +25,7 @@ module Briscoe
 
     private
     def signup_params
-      user_key = Briscoe.user_class.model_name.param_key
+      user_key = Yellin.user_class.model_name.param_key
       params.require(user_key).permit(:email, :password, :password_confirmation)
     end
   end

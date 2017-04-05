@@ -1,3 +1,3 @@
-Briscoe.user_class = "TestUser"
-Briscoe.default_from_address = 'noreply@example.com'
-Briscoe.app_name = "Test App"
+Yellin.user_class = "TestUser"
+Yellin.default_from_address = 'noreply@example.com'
+Yellin.app_name = "Test App"

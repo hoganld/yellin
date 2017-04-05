@@ -1,4 +1,4 @@
-Briscoe::Engine.routes.draw do
+Yellin::Engine.routes.draw do
   get 'signup', to: 'registrations#new'
   post 'signup', to: 'registrations#create'
   get 'login', to: 'sessions#new'

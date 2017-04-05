@@ -1,6 +1,6 @@
-module Briscoe
+module Yellin
   class ApplicationMailer < ActionMailer::Base
-    default from: Briscoe.default_from_address
+    default from: Yellin.default_from_address
     layout 'mailer'
   end
 end

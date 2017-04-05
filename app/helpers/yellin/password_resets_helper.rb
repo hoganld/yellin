@@ -1,4 +1,4 @@
-module Briscoe
+module Yellin
   module PasswordResetsHelper
   end
 end

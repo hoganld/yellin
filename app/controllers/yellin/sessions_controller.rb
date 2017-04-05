@@ -1,10 +1,10 @@
-require_dependency "briscoe/application_controller"
+require_dependency "yellin/application_controller"
 
-module Briscoe
+module Yellin
   class SessionsController < ApplicationController
 
     def create
-      @user = Briscoe.user_class.find_by(email: params[:session][:email].downcase)
+      @user = Yellin.user_class.find_by(email: params[:session][:email].downcase)
       if @user && @user.authenticate(params[:session][:password])
         if @user.activated?
           log_in(@user)

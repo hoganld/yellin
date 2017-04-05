@@ -1,7 +1,7 @@
-module Briscoe
+module Yellin
   class ApplicationController < ActionController::Base
     protect_from_forgery with: :exception
 
-    include Briscoe::SessionsHelper
+    include Yellin::SessionsHelper
   end
 end

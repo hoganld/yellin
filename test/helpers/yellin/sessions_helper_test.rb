@@ -1,6 +1,6 @@
 require 'test_helper'
 
-module Briscoe
+module Yellin
   class SessionsHelperTest < ActionView::TestCase
     def setup
       @user = test_users(:one)

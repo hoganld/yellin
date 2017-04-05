@@ -1,6 +1,6 @@
 require 'test_helper'
 
-module Briscoe
+module Yellin
   class AccountActivationsControllerTest < ActionDispatch::IntegrationTest
     include Engine.routes.url_helpers
 

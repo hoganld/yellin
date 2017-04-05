@@ -1,2 +1,2 @@
-//= link_directory ../javascripts/briscoe .js
-//= link_directory ../stylesheets/briscoe .css
+//= link_directory ../javascripts/yellin .js
+//= link_directory ../stylesheets/yellin .css

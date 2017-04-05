@@ -1,4 +1,4 @@
-module Briscoe
+module Yellin
   module ActsAsUser
     extend ActiveSupport::Concern
 
@@ -25,7 +25,7 @@ module Briscoe
           SecureRandom.urlsafe_base64
         end
 
-        include Briscoe::ActsAsUser::LocalInstanceMethods
+        include Yellin::ActsAsUser::LocalInstanceMethods
       end
     end
 
@@ -41,8 +41,8 @@ module Briscoe
       end
 
       def create_reset_digest
-        self.reset_token = Briscoe.user_class.new_token
-        update_columns(reset_digest: Briscoe.user_class.digest(reset_token), reset_sent_at: Time.zone.now)
+        self.reset_token = Yellin.user_class.new_token
+        update_columns(reset_digest: Yellin.user_class.digest(reset_token), reset_sent_at: Time.zone.now)
       end
 
       def forget
@@ -54,8 +54,8 @@ module Briscoe
       end
 
       def remember
-        self.remember_token = Briscoe.user_class.new_token
-        update_attribute(:remember_digest, Briscoe.user_class.digest(remember_token))
+        self.remember_token = Yellin.user_class.new_token
+        update_attribute(:remember_digest, Yellin.user_class.digest(remember_token))
       end
 
       def reset_password(params)
@@ -75,8 +75,8 @@ module Briscoe
       end
 
       def create_activation_digest
-        self.activation_token = Briscoe.user_class.new_token
-        self.activation_digest = Briscoe.user_class.digest(activation_token)
+        self.activation_token = Yellin.user_class.new_token
+        self.activation_digest = Yellin.user_class.digest(activation_token)
       end
     end
   end
