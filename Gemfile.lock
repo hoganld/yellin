@@ -4,7 +4,6 @@ PATH
     yellin (0.1.0)
       bcrypt (~> 3.1.11)
       rails (~> 5.0.2)
-      rails-controller-testing
 
 GEM
   remote: https://rubygems.org/
@@ -118,6 +117,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  rails-controller-testing
   sqlite3
   yellin!
 
