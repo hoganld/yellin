@@ -50,7 +50,7 @@ module Yellin
       end
 
       def password_reset_expired?
-        reset_sent_at < 2.hours.ago
+        reset_sent_at < Yellin.reset_timeout_hours.hours.ago
       end
 
       def remember
