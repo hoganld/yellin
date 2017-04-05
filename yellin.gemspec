@@ -1,15 +1,15 @@
 $:.push File.expand_path("../lib", __FILE__)
 
 # Maintain your gem's version:
-require "briscoe/version"
+require "yellin/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "briscoe"
-  s.version     = Briscoe::VERSION
+  s.name        = "yellin"
+  s.version     = Yellin::VERSION
   s.authors     = ["Luke Hogan", "Michael Hartl"]
   s.email       = ["hoganld@gmail.com"]
-  s.homepage    = "https://github.com/dukemagen/briscoe.git"
+  s.homepage    = "https://github.com/dukemagen/yellin.git"
   s.summary     = "Rails engine providing authentication based on `has_secure_password`."
   s.description = "Rails engine providing user authentication and basic account management (account confirmation, password reset); Based on authentication framework developed during Michael Hartl's Ruby on Rails Tutorial."
   s.license     = "MIT"

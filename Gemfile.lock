@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    briscoe (0.1.0)
+    yellin (0.1.0)
       bcrypt (~> 3.1.11)
       rails (~> 5.0.2)
       rails-controller-testing
@@ -118,7 +118,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  briscoe!
+  yellin!
   sqlite3
 
 BUNDLED WITH
