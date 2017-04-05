@@ -2,13 +2,12 @@ require_dependency "yellin/application_controller"
 
 module Yellin
   class RegistrationsController < ApplicationController
-    REGISTRATION_MESSAGE = "Please check your email to activate your account."
 
     def create
       @user = Yellin.user_class.new(signup_params)
       if @user.save
         @user.send_activation_email
-        flash[:info] = REGISTRATION_MESSAGE
+        flash[:info] = "Please check your email to activate your account."
         after_create
       else
         render 'new'

@@ -15,7 +15,7 @@ module Yellin
         @user.create_reset_digest
         @user.send_password_reset_email
       end
-      flash[:info] = "Email sent with password reset instructions"
+      flash[:info] = "Email sent with password reset instructions."
       redirect_to main_app.root_url
     end
 

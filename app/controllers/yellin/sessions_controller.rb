@@ -15,7 +15,7 @@ module Yellin
           redirect_to main_app.root_url
         end
       else
-        flash.now[:danger] = "Invalid email/password combination"
+        flash.now[:danger] = "Invalid email/password combination."
         render 'new'
       end
     end
