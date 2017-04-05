@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.description = "Rails engine providing user authentication and basic account management (account confirmation, password reset); Based on authentication framework developed during Michael Hartl's Ruby on Rails Tutorial."
   s.license     = "MIT"
 
-  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
+  s.files = Dir["{app,config,db,lib}/**/*", "LICENSE", "Rakefile", "README.md"]
 
   s.add_dependency "rails", "~> 5.0.2"
   s.add_dependency "bcrypt", "~>3.1.11"
