@@ -1,6 +1,6 @@
 require 'test_helper'
 
-module Miniauth
+module Briscoe
   class SessionsHelperTest < ActionView::TestCase
     def setup
       @user = test_users(:one)

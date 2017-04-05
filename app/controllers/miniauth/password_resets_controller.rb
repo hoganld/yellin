@@ -1,6 +1,6 @@
-require_dependency "miniauth/application_controller"
+require_dependency "briscoe/application_controller"
 
-module Miniauth
+module Briscoe
   class PasswordResetsController < ApplicationController
     before_action :get_user, only: [:edit, :update]
     before_action :valid_user, only: [:edit, :update]
@@ -10,7 +10,7 @@ module Miniauth
     end
 
     def create
-      @user = Miniauth.user_class.find_by(email: params[:password_reset][:email].downcase)
+      @user = Briscoe.user_class.find_by(email: params[:password_reset][:email].downcase)
       if @user
         @user.create_reset_digest
         @user.send_password_reset_email
@@ -41,7 +41,7 @@ module Miniauth
     end
 
     def get_user
-      @user = Miniauth.user_class.find_by(email: params[:email])
+      @user = Briscoe.user_class.find_by(email: params[:email])
     end
 
     def valid_user

@@ -1,5 +1,5 @@
 class ApplicationRecord < ActiveRecord::Base
-  include Miniauth::ActsAsUser
+  include Briscoe::ActsAsUser
 
   self.abstract_class = true
 end

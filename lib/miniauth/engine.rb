@@ -1,10 +1,10 @@
-module Miniauth
+module Briscoe
   class Engine < ::Rails::Engine
-    isolate_namespace Miniauth
+    isolate_namespace Briscoe
 
-    initializer 'miniauth.action_controller' do |app|
+    initializer 'briscoe.action_controller' do |app|
       ActiveSupport.on_load :action_controller do
-        helper Miniauth::SessionsHelper
+        helper Briscoe::SessionsHelper
       end
     end
   end

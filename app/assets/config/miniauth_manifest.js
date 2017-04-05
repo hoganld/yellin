@@ -1,2 +1,2 @@
-//= link_directory ../javascripts/miniauth .js
-//= link_directory ../stylesheets/miniauth .css
+//= link_directory ../javascripts/briscoe .js
+//= link_directory ../stylesheets/briscoe .css

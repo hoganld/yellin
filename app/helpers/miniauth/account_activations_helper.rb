@@ -1,4 +1,4 @@
-module Miniauth
+module Briscoe
   module AccountActivationsHelper
   end
 end

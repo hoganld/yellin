@@ -1,4 +1,4 @@
 # desc "Explaining what the task does"
-# task :miniauth do
+# task :briscoe do
 #   # Task goes here
 # end

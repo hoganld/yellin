@@ -1,4 +1,4 @@
-module Miniauth
+module Briscoe
   class ApplicationRecord < ActiveRecord::Base
     self.abstract_class = true
   end

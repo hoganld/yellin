@@ -1,10 +1,10 @@
-require_dependency "miniauth/application_controller"
+require_dependency "briscoe/application_controller"
 
-module Miniauth
+module Briscoe
   class SessionsController < ApplicationController
 
     def create
-      @user = Miniauth.user_class.find_by(email: params[:session][:email].downcase)
+      @user = Briscoe.user_class.find_by(email: params[:session][:email].downcase)
       if @user && @user.authenticate(params[:session][:password])
         if @user.activated?
           log_in(@user)

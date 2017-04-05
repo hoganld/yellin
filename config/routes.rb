@@ -1,4 +1,4 @@
-Miniauth::Engine.routes.draw do
+Briscoe::Engine.routes.draw do
   get 'signup', to: 'registrations#new'
   post 'signup', to: 'registrations#create'
   get 'login', to: 'sessions#new'

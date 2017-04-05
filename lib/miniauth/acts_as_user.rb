@@ -1,4 +1,4 @@
-module Miniauth
+module Briscoe
   module ActsAsUser
     extend ActiveSupport::Concern
 
@@ -25,7 +25,7 @@ module Miniauth
           SecureRandom.urlsafe_base64
         end
 
-        include Miniauth::ActsAsUser::LocalInstanceMethods
+        include Briscoe::ActsAsUser::LocalInstanceMethods
       end
     end
 
@@ -41,8 +41,8 @@ module Miniauth
       end
 
       def create_reset_digest
-        self.reset_token = Miniauth.user_class.new_token
-        update_columns(reset_digest: Miniauth.user_class.digest(reset_token), reset_sent_at: Time.zone.now)
+        self.reset_token = Briscoe.user_class.new_token
+        update_columns(reset_digest: Briscoe.user_class.digest(reset_token), reset_sent_at: Time.zone.now)
       end
 
       def forget
@@ -54,8 +54,8 @@ module Miniauth
       end
 
       def remember
-        self.remember_token = Miniauth.user_class.new_token
-        update_attribute(:remember_digest, Miniauth.user_class.digest(remember_token))
+        self.remember_token = Briscoe.user_class.new_token
+        update_attribute(:remember_digest, Briscoe.user_class.digest(remember_token))
       end
 
       def reset_password(params)
@@ -75,8 +75,8 @@ module Miniauth
       end
 
       def create_activation_digest
-        self.activation_token = Miniauth.user_class.new_token
-        self.activation_digest = Miniauth.user_class.digest(activation_token)
+        self.activation_token = Briscoe.user_class.new_token
+        self.activation_digest = Briscoe.user_class.digest(activation_token)
       end
     end
   end
