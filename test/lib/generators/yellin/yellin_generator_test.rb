@@ -44,6 +44,5 @@ module Yellin
         assert_match(/mount Yellin::Engine => '\/'/, routes)
       end
     end
-
   end
 end
