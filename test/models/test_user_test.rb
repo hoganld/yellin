@@ -65,4 +65,8 @@ class TestUserTest < ActiveSupport::TestCase
     assert_not @user.authenticated?(:remember, '')
   end
 
+  test "should be inactive by default" do
+    assert_not @user.activated?
+  end
+
 end

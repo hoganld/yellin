@@ -28,10 +28,10 @@ module Yellin
       get edit_password_reset_path(user.reset_token, email: "")
       assert_redirected_to root_url
       # Inactive user
-      user.toggle!(:activated)
+      user.update_attribute(:activated_at, nil)
       get edit_password_reset_path(user.reset_token, email: user.email)
       assert_redirected_to root_url
-      user.toggle!(:activated)
+      user.update_attribute(:activated_at, 1.hour.ago)
       # Right email, wrong token
       get edit_password_reset_path("wrong token", email: user.email)
       assert_redirected_to root_url

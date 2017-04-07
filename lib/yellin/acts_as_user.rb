@@ -31,7 +31,11 @@ module Yellin
 
     module LocalInstanceMethods
       def activate
-        update_columns(activated: true, activated_at: Time.zone.now)
+        update_attribute(:activated_at, Time.zone.now)
+      end
+
+      def activated?
+        !activated_at.nil? && activated_at < Time.zone.now
       end
 
       def authenticated?(attribute, token)
