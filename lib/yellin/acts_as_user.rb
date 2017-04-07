@@ -11,7 +11,7 @@ module Yellin
         has_secure_password
         before_save :downcase_email
         before_create :create_activation_digest
-        validates :password, presence: true, length: { minimum: 12 }, allow_nil: true
+        validates :password, presence: true, length: { minimum: Yellin.password_minimum_length }, allow_nil: true
         # See https://davidcel.is/posts/stop-validating-email-addresses-with-regex/ for regex reasoning
         validates :email, presence: true, length: { maximum: 255 }, format: { with: /@/ },
                           uniqueness: { case_sensitive: false }

@@ -32,8 +32,9 @@ module Yellin
     test "generator creates initializer file" do
       run_generator ["User"]
       assert_file "config/initializers/yellin.rb" do |init|
-        assert_match(/Yellin.user_class = \"User\"/, init)
         assert_match(/Yellin.app_name = Dummy/, init)
+        assert_match(/Yellin.password_minimum_length = 12/, init)
+        assert_match(/Yellin.user_class = \"User\"/, init)
       end
     end
 

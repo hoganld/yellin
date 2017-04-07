@@ -2,7 +2,7 @@ require "yellin/engine"
 require "yellin/acts_as_user"
 
 module Yellin
-  mattr_accessor :app_name, :default_from_address, :reset_timeout_hours, :user_class
+  mattr_accessor :app_name, :default_from_address, :password_minimum_length, :reset_timeout_hours, :user_class
 
   def self.app_name
     @@app_name || Rails.application.class.parent
@@ -10,6 +10,10 @@ module Yellin
 
   def self.default_from_address
     @@default_from_address || 'noreply@exmaple.com'
+  end
+
+  def self.password_minimum_length
+    @@password_minimum_length || 12
   end
 
   def self.reset_timeout_hours
