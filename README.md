@@ -11,7 +11,7 @@ Sometimes you need secure authentication for your Rails app, but a huge library 
 Matasano (now part of NCC Group) considers automated password reset one of their 7 Deadly Web App Features. The implementation here takes into careful consideration the advice in [this discussion](https://news.ycombinator.com/item?id=5033513).
 
 ### Credit where credit is due
-This gem is heavily based on the authentication system developed in Michael Hartl's [Ruby on Rails Tutorial][http://railstutorial.org). Basically, I've always liked most of that code, but I got tired of re-implementing my own modified version whenever I didn't want to use Devise. So I did the obvious thing and enginified it.
+This gem is heavily based on the authentication system developed in Michael Hartl's [Ruby on Rails Tutorial](http://railstutorial.org). Basically, I've always liked most of that code, but I got tired of re-implementing my own modified version whenever I didn't want to use Devise. So I did the obvious thing and enginified it.
 
 ## Usage
 Yellin provides a generator that takes care of all configuration you need to use it. Run the generator with the name of the user model class you want to use. If the model already exists, it will be updated. Otherwise, it will be created from scratch.
@@ -52,7 +52,7 @@ end
 You also must have a root route defined in `routes.rb`, or Yellin will break in several places (probably along with lots of other things).
 
 ### Views and Forms
-You'll likely want to modify the views and forms used by Yellin -- likely at least the user signup form. To encourage you to modify these views, Yellin provides a rake task to copy the default files into your workspace:
+You'll likely want to modify the views and forms used by Yellin -- probably at least the user signup form. To encourage you to modify these views, Yellin provides a rake task to copy the default files into your workspace:
 
 ```bash
 $ rails yellin:install:views
