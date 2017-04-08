@@ -20,6 +20,12 @@ Yellin provides a generator that takes care of all configuration you need to use
 $ rails generate yellin User
 ```
 
+If you decide Yellin is lame and need to remove it, you can use the normal `destroy` command:
+
+```bash
+$ rails destroy yellin User
+```
+
 ### Configuration options
 The generator installs a generator to `config/initializers/yellin.rb`. It looks like this:
 
@@ -59,6 +65,12 @@ $ rails yellin:install:views
 ```
 
 You'll find the files copied under `app/views/yellin`. Modify them in place -- if you move them, expect Yellin to misbehave.
+
+If you change your mind, you can remove the view files like so:
+
+```bash
+$ rails yellin:uninstall:views
+```
 
 ## Installation
 Add this line to your application's Gemfile:
