@@ -35,6 +35,7 @@ module Yellin
         assert_match(/Yellin.app_name = Dummy/, init)
         assert_match(/Yellin.flash/, init)
         assert_match(/reset_success: \"Your password has been reset.\"/, init)
+        assert_match(/reset_invalid: \"Email address not found.\"/, init)
         assert_match(/Yellin.password_minimum_length = 12/, init)
         assert_match(/Yellin.user_class = \"User\"/, init)
       end
