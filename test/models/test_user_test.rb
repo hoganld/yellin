@@ -45,12 +45,19 @@ class TestUserTest < ActiveSupport::TestCase
     assert @user.email == 'user@example.com'
   end
 
-  test "password required" do
+  test "password required for activated user" do
     @user.password = nil
     assert_not @user.valid?
   end
 
+  test "password not required for inactive user" do
+    @user.update_attribute(:activated_at, nil)
+    @user.update_attribute(:password_digest, nil)
+    assert @user.valid?
+  end
+
   test "password must be at least 12 characters" do
+    @user.update_attribute(:activated_at, 1.hour.ago)
     @user.password = @user.password_confirmation = 'Chihuahua'
     assert_not @user.valid?
   end
