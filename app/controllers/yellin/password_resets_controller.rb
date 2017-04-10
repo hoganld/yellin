@@ -15,6 +15,7 @@ module Yellin
         @user.create_reset_digest
         @user.send_password_reset_email
       end
+      # Always say reset sent, to avoid leaking account email addresses
       flash[:info] = Yellin.flash[:reset_sent]
       redirect_to main_app.root_url
     end
