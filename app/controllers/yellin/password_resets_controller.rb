@@ -14,10 +14,12 @@ module Yellin
       if @user
         @user.create_reset_digest
         @user.send_password_reset_email
+        flash[:info] = Yellin.flash[:reset_sent]
+        redirect_to main_app.root_url
+      else
+        flash.now[:danger] = Yellin.flash[:reset_invalid]
+        render 'new'
       end
-      # Always say reset sent, to avoid leaking account email addresses
-      flash[:info] = Yellin.flash[:reset_sent]
-      redirect_to main_app.root_url
     end
 
     def edit

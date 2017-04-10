@@ -15,7 +15,8 @@ module Yellin
       assert_template "password_resets/new"
       # Invalid email
       post password_resets_path, params: { password_reset: { email: '' } }
-      assert_redirected_to root_url
+      assert_not flash.empty?
+      assert_template 'password_resets/new'
       # Valid email
       post password_resets_path, params: { password_reset: { email: @user.email } }
       assert_not_equal @user.reset_digest, @user.reload.reset_digest
