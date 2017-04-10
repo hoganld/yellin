@@ -13,11 +13,12 @@ Gem::Specification.new do |s|
   s.summary     = "Minimalistic Rails engine providing user authentication."
   s.description = "Minimalistic Rails engine providing user registration, authentication, and password reset."
   s.license     = "MIT"
+  s.required_ruby_version = '>= 2.2.2'
 
   s.files = Dir["{app,config,db,lib}/**/*", "LICENSE", "Rakefile", "README.md"]
 
   s.add_dependency "rails", "~> 5.0"
-  s.add_dependency "bcrypt", "~>3.1"
+  s.add_dependency "bcrypt", "~> 3.1"
 
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "rails-controller-testing"
