@@ -12,9 +12,7 @@ module Yellin
     test "invalid signup info" do
       get signup_path
       assert_no_difference "TestUser.count" do
-        post signup_path, params: { test_user: { email: 'user@invalid.com',
-                                            password: 'foo',
-                                            password_confirmation: 'bar'} }
+        post signup_path, params: { test_user: { email: 'user@invalid.com' } }
       end
       assert_template "registrations/new"
       assert_select "div#error_explanation"
