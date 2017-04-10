@@ -27,7 +27,7 @@ $ rails destroy yellin User
 ```
 
 ### Configuration options
-The generator installs a generator to `config/initializers/yellin.rb`. It looks like this:
+The generator installs a generator to `config/initializers/yellin.rb`. It looks something like this:
 
 ```ruby
 Yellin.app_name = Default App Name
@@ -91,6 +91,8 @@ $ gem install yellin
 
 ## Contributing
 Bugfixes, enhancements, spelling corrections are all welcome. Use the pull request button :)
+
+To report a security issue, please notify me directly over email.
 
 ## License
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).

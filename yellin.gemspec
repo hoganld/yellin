@@ -10,8 +10,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Luke Hogan", "Michael Hartl"]
   s.email       = ["hoganld@gmail.com"]
   s.homepage    = "https://github.com/dukemagen/yellin.git"
-  s.summary     = "Rails engine providing authentication based on `has_secure_password`."
-  s.description = "Rails engine providing user authentication and basic account management (account confirmation, password reset); Based on authentication framework developed during Michael Hartl's Ruby on Rails Tutorial."
+  s.summary     = "Minimalistic Rails engine providing user authentication."
+  s.description = "Minimalistic Rails engine providing user registration, authentication, and password reset."
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "LICENSE", "Rakefile", "README.md"]
