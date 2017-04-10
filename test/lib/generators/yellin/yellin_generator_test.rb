@@ -33,6 +33,8 @@ module Yellin
       run_generator ["User"]
       assert_file "config/initializers/yellin.rb" do |init|
         assert_match(/Yellin.app_name = Dummy/, init)
+        assert_match(/Yellin.flash/, init)
+        assert_match(/reset_success: \"Your password has been reset.\"/, init)
         assert_match(/Yellin.password_minimum_length = 12/, init)
         assert_match(/Yellin.user_class = \"User\"/, init)
       end

@@ -7,10 +7,10 @@ module Yellin
       if @user && !@user.activated? && @user.authenticated?(:activation, params[:id])
         @user.activate
         log_in @user
-        flash[:success] = "Account activated."
+        flash[:success] = Yellin.flash[:activation_success]
         after_activate
       else
-        flash[:danger] = "Invalid activation link."
+        flash[:danger] = Yellin.flash[:activation_invalid]
         redirect_to main_app.root_url
       end
     end

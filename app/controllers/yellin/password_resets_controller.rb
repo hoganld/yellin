@@ -15,7 +15,7 @@ module Yellin
         @user.create_reset_digest
         @user.send_password_reset_email
       end
-      flash[:info] = "Email sent with password reset instructions."
+      flash[:info] = Yellin.flash[:reset_sent]
       redirect_to main_app.root_url
     end
 
@@ -27,7 +27,7 @@ module Yellin
         @user.errors.add(:password, "can't be empty")
         render 'edit'
       elsif @user.reset_password(user_params)
-        flash[:success] = "Your password has been reset."
+        flash[:success] = Yellin.flash[:reset_success]
         redirect_to login_path
       else
         render 'edit'
@@ -52,7 +52,7 @@ module Yellin
 
     def check_expiration
       if @user.password_reset_expired?
-        flash[:danger] = "Password reset has expired."
+        flash[:danger] = Yellin.flash[:reset_expired]
         redirect_to new_password_reset_url
       end
     end

@@ -11,11 +11,11 @@ module Yellin
           params[:session][:remember_me] == '1' ? remember(@user) : forget(@user)
           after_create
         else
-          flash[:warning] = "Account not activated. Check your email for the activation link."
+          flash[:warning] = Yellin.flash[:account_inactive]
           redirect_to main_app.root_url
         end
       else
-        flash.now[:danger] = "Invalid email/password combination."
+        flash.now[:danger] = Yellin.flash[:bad_credentials]
         render 'new'
       end
     end

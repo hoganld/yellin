@@ -7,7 +7,7 @@ module Yellin
       @user = Yellin.user_class.new(signup_params)
       if @user.save
         @user.send_activation_email
-        flash[:info] = "Please check your email to activate your account."
+        flash[:info] = Yellin.flash[:activation_pending]
         after_create
       else
         render 'new'
