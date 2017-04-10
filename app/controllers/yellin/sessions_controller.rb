@@ -9,7 +9,11 @@ module Yellin
         if @user.activated?
           log_in(@user)
           params[:session][:remember_me] == '1' ? remember(@user) : forget(@user)
-          after_create
+          begin
+            redirect_back_or @user
+          rescue NoMethodError
+            redirect_to main_app.root_url
+          end
         else
           flash[:warning] = Yellin.flash[:account_inactive]
           redirect_to main_app.root_url
@@ -26,14 +30,6 @@ module Yellin
     end
 
     def new
-    end
-
-    def after_create
-      begin
-        redirect_back_or @user
-      rescue NoMethodError
-        redirect_to main_app.root_url
-      end
     end
 
   end

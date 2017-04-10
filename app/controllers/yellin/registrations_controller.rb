@@ -8,7 +8,7 @@ module Yellin
       if @user.save
         @user.send_activation_email
         flash[:info] = Yellin.flash[:activation_pending]
-        after_create
+        redirect_to main_app.root_url
       else
         render 'new'
       end
@@ -16,10 +16,6 @@ module Yellin
 
     def new
       @user = Yellin.user_class.new
-    end
-
-    def after_create
-      redirect_to main_app.root_url
     end
 
     private
