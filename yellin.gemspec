@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = Yellin::VERSION
   s.authors     = ["Luke Hogan", "Michael Hartl"]
   s.email       = ["hoganld@gmail.com"]
-  s.homepage    = "https://github.com/dukemagen/yellin.git"
+  s.homepage    = "https://github.com/hoganld/yellin.git"
   s.summary     = "Minimalistic Rails engine providing user authentication."
   s.description = "Minimalistic Rails engine providing user registration, authentication, and password reset."
   s.license     = "MIT"
