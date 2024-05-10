@@ -1,0 +1,62 @@
+#+TITLE: Yellin TODO
+
+* Scope
+The scope of Yellin is Authentication. This means that other things are out of scope.
+** In Scope
+*** Authentication methods
+Email + Password
+MFA (TOTP etc)
+Webauthn
+Passkeys
+*** Other features
+Remember Me
+Password Reset
+Manual Session management (Log out other sessions)
+Check for pwned passwords
+Sudo
+*** Social/OAuth?
+Not really a fan.
+*** API auth?
+If I implement an API, then yes
+** Out of Scope
+Rate limiting
+User tracking
+Registrations
+Invitations
+Multiple Tenants
+* Dependencies
+Rails 7.1+
+bcrypt
+* Tests
+** Yellin Tests
+Directly implement tests for code that will live in the Engine itself
+*** Controllers
+- [ ] Sign in
+- [ ] Sign out
+- [ ] Password reset
+- [ ] Sessions management
+- [ ] Change Password
+- [ ] Change Email
+- [ ] Verify Email
+- [ ] Update Security Devices (TOTP, Webauthn, Passkeys)
+- [ ] Generate backup codes
+*** Models
+- [ ] Session model
+- [ ] Test User that includes the concerns
+*** Mailers
+- [ ] Test that the emails are sent out
+- [ ] Avoid testing the content, because that will be user configurable
+*** Integration
+End-to-end workflow tests for:
+- [ ] Sign in/Sign out
+- [ ] Sign in with MFA
+- [ ] Sign in with TOTP
+- [ ] Sign in with Webauthn
+- [ ] Password Reset
+- [ ] Change + Verify Email
+- [ ] Change MFA Devices
+** TODO Test Generators
+Write generators that will type the boilerplate tests for
+*** Models
+- [ ] User model
+- [ ] Access-controlled controllers (generic)
