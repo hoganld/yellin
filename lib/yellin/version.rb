@@ -1,3 +1,3 @@
 module Yellin
-  VERSION = '0.1.2'
+  VERSION = '1.0-alpha'
 end
