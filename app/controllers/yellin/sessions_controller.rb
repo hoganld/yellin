@@ -6,16 +6,11 @@ module Yellin
     def create
       @user = Yellin.user_class.find_by(email: params[:session][:email].downcase)
       if @user && @user.authenticate(params[:session][:password])
-        if @user.activated?
-          log_in(@user)
-          params[:session][:remember_me] == '1' ? remember(@user) : forget(@user)
-          begin
-            redirect_back_or @user
-          rescue NoMethodError
-            redirect_to main_app.root_url
-          end
-        else
-          flash[:warning] = Yellin.flash[:account_inactive]
+        log_in(@user)
+        params[:session][:remember_me] == '1' ? remember(@user) : forget(@user)
+        begin
+          redirect_back_or @user
+        rescue NoMethodError
           redirect_to main_app.root_url
         end
       else

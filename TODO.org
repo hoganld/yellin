@@ -60,8 +60,8 @@ Write generators that will type the boilerplate tests for:
 - [ ] User model
 - [ ] Access-controlled controllers (generic)
 * Migration Path
-- [ ] Remove registration
-- [ ] Remove account activation
+- [X] Remove registration
+- [X] Remove account activation
 - [ ] Remove dependency on rails-controller-test gem (assigns)
 - [ ] Use DB-backed Sessions instead of :remember_me
 - [ ] Use authenticate_by

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    yellin (0.1.2)
+    yellin (1.0.pre.alpha)
       bcrypt (~> 3.1)
       rails (~> 7.1)
 

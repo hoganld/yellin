@@ -3,9 +3,7 @@
 one:
   email: one@example.com
   password_digest: <%= TestUser.digest('ThinkSiamese') %>
-  activated_at: <%= Time.zone.now %>
 
 two:
   email: two@example.com
   password_digest: <%= TestUser.digest('ThinkChihuahua') %>
-  activated_at: <%= Time.zone.now %>

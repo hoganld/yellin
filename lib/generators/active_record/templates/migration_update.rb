@@ -4,8 +4,6 @@ class <%= migration_class_name %> < ActiveRecord::Migration[<%= ActiveRecord::Mi
       t.string :email
       t.string :password_digest
       t.string :remember_digest
-      t.string :activation_digest
-      t.datetime :activated_at
       t.string :reset_digest
       t.datetime :reset_sent_at
       t.index [:email], name: :index_users_on_email, unique: true
@@ -18,8 +16,6 @@ class <%= migration_class_name %> < ActiveRecord::Migration[<%= ActiveRecord::Mi
     # remove_column :<%= table_name %>, :email, :string
     # remove_column :<%= table_name %>, :password_digest, :string
     # remove_column :<%= table_name %>, :remember_digest, :string
-    # remove_column :<%= table_name %>, :activation_digest, :string
-    # remove_column :<%= table_name %>, :activated_at, :datetime
     # remove_column :<%= table_name %>, :reset_digest, :string
     # remove_column :<%= table_name %>, :reset_sent_at, :datetime
     # remove_index :<%= table_name %>, name: :index_users_on_email
