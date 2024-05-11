@@ -56,7 +56,16 @@ End-to-end workflow tests for:
 - [ ] Change + Verify Email
 - [ ] Change MFA Devices
 ** TODO Test Generators
-Write generators that will type the boilerplate tests for
-*** Models
+Write generators that will type the boilerplate tests for:
 - [ ] User model
 - [ ] Access-controlled controllers (generic)
+* Migration Path
+- [ ] Remove registration
+- [ ] Remove account activation
+- [ ] Remove dependency on rails-controller-test gem (assigns)
+- [ ] Use DB-backed Sessions instead of :remember_me
+- [ ] Use authenticate_by
+- [ ] Use generates_token_for instead of custom digest generation
+- [ ] Split acts_as_user into multiple model concerns
+- [ ] New concerns for methods needed to go in ApplicationController
+- [ ] MFA logic from Authentication-Zero
