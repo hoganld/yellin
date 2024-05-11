@@ -63,7 +63,7 @@ module Yellin
       end
 
       def reset_password(params)
-        update_attributes(password: params[:password], password_confirmation: params[:password_confirmation], reset_digest: nil)
+        update(password: params[:password], password_confirmation: params[:password_confirmation], reset_digest: nil)
       end
 
       def send_activation_email

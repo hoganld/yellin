@@ -7,19 +7,20 @@ require "yellin/version"
 Gem::Specification.new do |s|
   s.name        = "yellin"
   s.version     = Yellin::VERSION
-  s.authors     = ["Luke Hogan", "Michael Hartl"]
+  s.authors     = ["Luke Hogan"]
   s.email       = ["hoganld@gmail.com"]
   s.homepage    = "https://github.com/hoganld/yellin.git"
-  s.summary     = "Minimalistic Rails engine providing user authentication."
-  s.description = "Minimalistic Rails engine providing user registration, authentication, and password reset."
+  s.summary     = "Multi-Factor Authentication for Rails"
+  s.description = "MFA for Rails supporting Passwords, TOTP, Webauthn and Passkeys"
   s.license     = "MIT"
-  s.required_ruby_version = '>= 2.2.2'
+  s.required_ruby_version = '>= 3.2'
 
   s.files = Dir["{app,config,db,lib}/**/*", "LICENSE", "Rakefile", "README.md"]
 
-  s.add_dependency "rails", "~> 5.0"
+  s.add_dependency "rails", "~> 7.1"
   s.add_dependency "bcrypt", "~> 3.1"
 
   s.add_development_dependency "sqlite3", "~> 1.4"
+  # TODO remove the need for this dependency by removing test calls to `assigns`
   s.add_development_dependency "rails-controller-testing"
 end

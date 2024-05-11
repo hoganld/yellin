@@ -1,5 +1,5 @@
 # this is used to identify the application in account activation emails
-Yellin.app_name = <%= Rails.application.class.parent %>
+Yellin.app_name = <%= Rails.application.class.module_parent %>
 
 # this is used in the mailer to send account activation and password reset emails
 Yellin.default_from_address = "noreply@example.com"

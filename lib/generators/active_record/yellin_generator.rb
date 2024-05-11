@@ -35,7 +35,7 @@ module ActiveRecord
       end
 
       def model_exists?
-        File.exists? File.join(destination_root, "app/models", "#{file_name}.rb")
+        File.exist? File.join(destination_root, "app/models", "#{file_name}.rb")
       end
 
       def migration_exists?
