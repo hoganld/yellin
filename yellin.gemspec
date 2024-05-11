@@ -20,6 +20,6 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", "~> 5.0"
   s.add_dependency "bcrypt", "~> 3.1"
 
-  s.add_development_dependency "sqlite3"
+  s.add_development_dependency "sqlite3", "~> 1.4"
   s.add_development_dependency "rails-controller-testing"
 end
