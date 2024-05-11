@@ -62,7 +62,7 @@ Write generators that will type the boilerplate tests for:
 * Migration Path
 - [X] Remove registration
 - [X] Remove account activation
-- [ ] Remove dependency on rails-controller-test gem (assigns)
+- [X] Remove dependency on rails-controller-test gem (assigns)
 - [ ] Use DB-backed Sessions instead of :remember_me
 - [ ] Use authenticate_by
 - [ ] Use generates_token_for instead of custom digest generation

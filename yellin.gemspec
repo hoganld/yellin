@@ -21,6 +21,4 @@ Gem::Specification.new do |s|
   s.add_dependency "bcrypt", "~> 3.1"
 
   s.add_development_dependency "sqlite3", "~> 1.4"
-  # TODO remove the need for this dependency by removing test calls to `assigns`
-  s.add_development_dependency "rails-controller-testing"
 end
