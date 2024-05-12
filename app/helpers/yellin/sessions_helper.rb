@@ -48,18 +48,15 @@ module Yellin
       session.delete(:forwarding_url)
     end
 
-    private
-      # These methods appear to be completely unused.
-      def store_location
-        session[:forwarding_url] = request.original_url if request.get?
-      end
+    def store_location
+      session[:forwarding_url] = request.original_url if request.get?
+    end
 
-      def signed_in_user
-        unless signed_in?
-          store_location
-          flash[:danger] = "Please sign in."
-          redirect_to sign_in_url
-        end
+    def sign_in_required
+      unless signed_in?
+        store_location
+        redirect_to yellin.sign_in_url, alert: "Please sign in."
       end
+    end
  end
 end

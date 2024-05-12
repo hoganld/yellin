@@ -42,5 +42,12 @@ module Yellin
       sign_in_as(@user, remember_me: '0')
       assert_empty cookies['remember_token']
     end
+
+    test "accessing protected page redirects to sign in page and then back" do
+      get secret_url
+      assert_redirected_to sign_in_url
+      sign_in_as(@user)
+      assert_redirected_to secret_url
+    end
   end
 end
