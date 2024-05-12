@@ -9,7 +9,7 @@ module Yellin
     end
 
     test "should get new" do
-      get login_path
+      get sign_in_path
       assert_response :success
       assert_select "h1", "Sign in"
     end

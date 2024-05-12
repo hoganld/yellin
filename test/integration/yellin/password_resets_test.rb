@@ -56,9 +56,9 @@ module Yellin
       params = { email: @user.email, user: {password: 'ThinkChihuahua', password_confirmation: 'ThinkChihuahua' }}
       patch password_reset_path(@user.reset_token, params: params)
       assert_nil @user.reload.reset_digest
-      assert_not is_logged_in?
+      assert_not is_signed_in?
       assert_not flash.empty?
-      assert_redirected_to login_path
+      assert_redirected_to sign_in_path
     end
   end
 end

@@ -14,13 +14,16 @@
       <nav>
         <ul>
           <li><%= link_to "Home", root_path %></li>
-          <% if logged_in? %>
-            <li><%= link_to "Sign out", yellin.logout_path, method: :delete %></li>
+          <% if signed_in? %>
+            <li><%= link_to "Sign out", yellin.sign_out_path, method: :delete %></li>
           <% else %>
-            <li><%= link_to "Sign in", yellin.login_path %></li>
+            <li><%= link_to "Sign in", yellin.sign_in_path %></li>
           <% end %>
         </ul>
       </nav>
+      <% flash.each do |message_type, message| %>
+        <%= content_tag(:div, message, class: "#{message_type}") %>
+      <% end %>
     </header>
     <%= yield %>
   </body>

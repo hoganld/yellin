@@ -19,11 +19,12 @@ module Yellin
       activation_pending: "Please check your email to activate your account.",
       activation_success: "Account activated.",
       bad_credentials: "Invalid email/password combination.",
-      login_required: "Please sign in.",
       reset_expired: "Password reset has expired.",
       reset_invalid: "Email address not found.",
       reset_sent: "Email sent with password reset instructions.",
       reset_success: "Your password has been reset.",
+      sign_in_required: "Please sign in.",
+      sign_in_success: "Signed in successfully.",
     }
     @@flash || default_flash
   end

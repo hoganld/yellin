@@ -7,7 +7,7 @@ module Yellin
       elsif (user_id = cookies.signed[:user_id])
         user = Yellin.user_class.find_by(id: user_id)
         if user && user.authenticated?(:remember, cookies[:remember_token])
-          log_in user
+          sign_in user
           @current_user = user
         end
       end
@@ -17,17 +17,17 @@ module Yellin
       user == current_user
     end
 
-    def log_in(user)
+    def sign_in(user)
       session[:user_id] = user.id
     end
 
-    def log_out
+    def sign_out
       forget(current_user)
       session.delete(:user_id)
       @current_user = nil
     end
 
-    def logged_in?
+    def signed_in?
       !current_user.nil?
     end
 
@@ -52,11 +52,11 @@ module Yellin
       session.delete(:forwarding_url)
     end
 
-    def logged_in_user
-      unless logged_in?
+    def signed_in_user
+      unless signed_in?
         store_location
         flash[:danger] = "Please sign in."
-        redirect_to login_url
+        redirect_to sign_in_url
       end
     end
 

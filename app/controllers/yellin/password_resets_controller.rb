@@ -31,7 +31,7 @@ module Yellin
         render 'edit'
       elsif @user.reset_password(user_params)
         flash[:success] = Yellin.flash[:reset_success]
-        redirect_to login_path
+        redirect_to sign_in_path
       else
         render 'edit'
       end
