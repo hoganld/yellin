@@ -43,22 +43,23 @@ module Yellin
       cookies.delete(:remember_token)
     end
 
-    def store_location
-      session[:forwarding_url] = request.original_url if request.get?
-    end
-
     def redirect_back_or(default)
       redirect_to(session[:forwarding_url] || default)
       session.delete(:forwarding_url)
     end
 
-    def signed_in_user
-      unless signed_in?
-        store_location
-        flash[:danger] = "Please sign in."
-        redirect_to sign_in_url
+    private
+      # These methods appear to be completely unused.
+      def store_location
+        session[:forwarding_url] = request.original_url if request.get?
       end
-    end
 
+      def signed_in_user
+        unless signed_in?
+          store_location
+          flash[:danger] = "Please sign in."
+          redirect_to sign_in_url
+        end
+      end
  end
 end
