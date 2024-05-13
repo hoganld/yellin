@@ -9,5 +9,4 @@ class YellinGenerator < Rails::Generators::NamedBase
     route "mount Yellin::Engine => '/'"
   end
 
-  hook_for :orm
 end
