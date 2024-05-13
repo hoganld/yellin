@@ -5,8 +5,8 @@ module Yellin
     #
     #   en.user_mailer.password_reset.subject
     #
-    def password_reset(user)
-      @user = user
+    def password_reset(user, token)
+      @token = token
       mail to: user.email, subject: 'Password reset'
     end
   end

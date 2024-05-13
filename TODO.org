@@ -67,7 +67,7 @@ Write generators that will type the boilerplate tests for:
 - [X] Nomenclature update: use sign_in instead of login, sign_out instead of logout
 - [X] Use normalizes
 - [X] Validate email with regex from STDLIB
-- [ ] Use generates_token_for instead of custom digest generation
+- [X] Use generates_token_for instead of custom digest generation
 - [ ] Use DB-backed Sessions instead of :remember_me
 - [ ] Split acts_as_user into multiple model concerns
 - [ ] New concerns for methods needed to go in ApplicationController

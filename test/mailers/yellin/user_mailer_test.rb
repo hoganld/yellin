@@ -4,14 +4,13 @@ module Yellin
   class UserMailerTest < ActionMailer::TestCase
     test "password_reset" do
       user = test_users(:one)
-      user.reset_token = Yellin.user_class.new_token
-      mail = UserMailer.password_reset(user)
+      token = user.generate_token_for :password_reset
+      mail = UserMailer.password_reset(user, token)
       assert_equal "Password reset", mail.subject
       assert_equal [user.email], mail.to
       assert_equal ["#{Yellin.default_from_address}"], mail.from
       assert_match "Password reset", mail.body.encoded
-      assert_match user.reset_token, mail.body.encoded
-      assert_match CGI.escape(user.email), mail.body.encoded
+      assert_match CGI.escape(token), mail.body.encoded
     end
   end
 end

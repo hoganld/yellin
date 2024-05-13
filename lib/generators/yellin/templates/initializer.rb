@@ -23,7 +23,7 @@ Yellin.flash = {
 Yellin.password_minimum_length = 12
 
 # this is the number of hours after which a password reset expires. Should be an integer.
-Yellin.reset_timeout_hours = 2
+Yellin.reset_timeout_minutes = 20
 
 # this is the name of the class implementing the User API
 Yellin.user_class = "<%= name %>"

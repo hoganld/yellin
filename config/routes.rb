@@ -4,5 +4,5 @@ Yellin::Engine.routes.draw do
   delete 'sign_out', to: 'sessions#destroy'
   get 'password_resets/new'
   get 'password_resets/edit'
-  resources :password_resets, only: [:create, :edit, :new, :update]
+  resource :password_reset, only: [:new, :edit, :create, :update]
 end

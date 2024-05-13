@@ -21,4 +21,5 @@ Gem::Specification.new do |s|
   s.add_dependency "bcrypt", "~> 3.1"
 
   s.add_development_dependency "sqlite3", "~> 1.4"
+  s.add_development_dependency "timecop"
 end
