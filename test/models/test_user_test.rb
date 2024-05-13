@@ -45,6 +45,12 @@ class TestUserTest < ActiveSupport::TestCase
     assert @user.email == 'user@example.com'
   end
 
+  test "email should be stripped of whitespace" do
+    @user.email = " user@example.com "
+    @user.save
+    assert @user.email == "user@example.com"
+  end
+
   test "password required" do
     @user.password = nil
     assert_not @user.valid?

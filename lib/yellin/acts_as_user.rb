@@ -9,7 +9,7 @@ module Yellin
       def acts_as_user
         attr_accessor :remember_token, :reset_token
         has_secure_password
-        before_save :downcase_email
+        normalizes :email, with: -> { _1.strip.downcase }
         validates :password, presence: true, length: { minimum: Yellin.password_minimum_length }, allow_nil: true
         # See https://davidcel.is/posts/stop-validating-email-addresses-with-regex/ for regex reasoning
         validates :email, presence: true, length: { maximum: 255 }, format: { with: /@/ },
@@ -59,10 +59,6 @@ module Yellin
 
       def send_password_reset_email
         UserMailer.password_reset(self).deliver_now
-      end
-
-      def downcase_email
-        self.email.downcase!
       end
     end
   end
