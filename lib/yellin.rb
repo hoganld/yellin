@@ -2,7 +2,7 @@ require "yellin/engine"
 require "yellin/acts_as_user"
 
 module Yellin
-  mattr_accessor :app_name, :default_from_address, :flash, :password_minimum_length, :reset_timeout_minutes, :user_class
+  mattr_accessor :app_name, :default_from_address, :flash, :password_minimum_length, :reset_timeout, :user_class
 
   def self.app_name
     @@app_name || Rails.application.class.parent
@@ -33,8 +33,8 @@ module Yellin
     @@password_minimum_length || 12
   end
 
-  def self.reset_timeout_minutes
-    @@reset_timeout_minutes || 20
+  def self.reset_timeout
+    @@reset_timeout || 20.minutes
   end
 
   def self.user_class

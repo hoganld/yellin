@@ -33,7 +33,7 @@ The generator installs a generator to `config/initializers/yellin.rb`. It looks 
 Yellin.app_name = Default App Name
 Yellin.default_from_address = 'noreply@example.com'
 Yellin.minimum_password_length = 12
-Yellin.reset_timeout_minutes = 20
+Yellin.reset_timeout = 20.minutes
 Yellin.user_class = "User"
 ```
 

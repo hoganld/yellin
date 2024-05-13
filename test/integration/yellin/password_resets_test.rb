@@ -31,7 +31,7 @@ module Yellin
       get edit_password_reset_path(sid: "wrong token")
       assert_redirected_to new_password_reset_path
       # Expired token
-      Timecop.travel((Yellin.reset_timeout_minutes + 1).minutes.from_now)
+      Timecop.travel((Yellin.reset_timeout + 1.minute).from_now)
       get edit_password_reset_path(sid: token)
       assert_not flash.empty?
       assert_redirected_to new_password_reset_path

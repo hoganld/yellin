@@ -14,7 +14,7 @@ module Yellin
         validates :email, presence: true, length: { maximum: 254 }, format: { with: URI::MailTo::EMAIL_REGEXP },
                   uniqueness: { case_sensitive: false }
 
-        generates_token_for :password_reset, expires_in: Yellin.reset_timeout_minutes.minutes do
+        generates_token_for :password_reset, expires_in: Yellin.reset_timeout do
           password_salt.last(10)
         end
 
