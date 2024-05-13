@@ -11,8 +11,7 @@ module Yellin
         has_secure_password
         normalizes :email, with: -> { _1.strip.downcase }
         validates :password, presence: true, length: { minimum: Yellin.password_minimum_length }, allow_nil: true
-        # See https://davidcel.is/posts/stop-validating-email-addresses-with-regex/ for regex reasoning
-        validates :email, presence: true, length: { maximum: 255 }, format: { with: /@/ },
+        validates :email, presence: true, length: { maximum: 254 }, format: { with: URI::MailTo::EMAIL_REGEXP },
                           uniqueness: { case_sensitive: false }
 
         def self.digest(string)
