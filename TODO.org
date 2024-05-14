@@ -71,6 +71,7 @@ Write generators that will type the boilerplate tests for:
 - [ ] Test new Generators for Session
 - [ ] Use DB-backed Sessions instead of :remember_me
 - [ ] Add expiry to Sessions
+- [ ] Auto-logout all Sessions on password reset
 - [ ] Split acts_as_user into multiple model concerns
 - [ ] New concerns for methods needed to go in ApplicationController
 - [ ] MFA logic from Authentication-Zero
