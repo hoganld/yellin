@@ -1,0 +1,9 @@
+Description:
+    Generate a sane Yellin configuration
+
+Example:
+    rails generate yellin:config
+
+    This will:
+        - create config/initializers/yellin.rb
+        - mount the Yellin engine in routes.rb

@@ -25,6 +25,6 @@ Yellin.password_minimum_length = 12
 # this is the number of hours after which a password reset expires. Should be an integer.
 Yellin.reset_timeout = 20.minutes
 
-# this is the name of the class implementing the User API
-Yellin.user_class = "<%= name %>"
+# set this to the name of the class implementing the User API
+Yellin.user_class = "User"
 
