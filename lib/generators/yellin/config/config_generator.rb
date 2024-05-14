@@ -14,4 +14,3 @@ module Yellin
     end
   end
 end
-

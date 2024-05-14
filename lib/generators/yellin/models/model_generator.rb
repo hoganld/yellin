@@ -1,13 +1,13 @@
-require 'rails/generators/active_record'
-
-# This generator is bad. It is inheriting from an undocumented internal-only rails API.
-module ActiveRecord
+module Yellin
   module Generators
-    class YellinGenerator < ActiveRecord::Generators::Base
-      source_root File.expand_path('../templates', __FILE__)
+    module ModelGenerator < Rails::Generators::NamedBase
+      source_root File.expand_path("templates", __dir__)
 
-      def handle_migration
+      def check_preexistence
         @preexisting_model = (behavior == :invoke && model_exists?) || (behavior == :revoke && migration_exists?)
+      end
+
+      def generate_migration
         if @preexisting_model
           migration_template "migration_update_#{table_name}.rb", "db/migrate/add_yellin_to_#{table_name}.rb"
         else
@@ -15,16 +15,25 @@ module ActiveRecord
         end
       end
 
-      def handle_model
-        # yellinize_user_model if behavior == :revoke
+      def generate_model
+        yellinize_model if behavior == :revoke
         unless @preexisting_model
           invoke "active_record:model", [name], migration: false
         end
-        # yellinize_user_model if behavior == :invoke
+        yellinize_model if behavior == :invoke
       end
 
       private
-      def yellinize_user_model
+      def model_exists?
+        File.exist? File.join(destination_root, "app/models", "#{file_name}.rb")
+      end
+
+      def migration_exists?
+        pattern = File.join(destination_root, "db/migrate", "*_add_yellin_to_#{table_name}.rb")
+        Dir.glob(pattern).first
+      end
+
+      def yellinize_model
         # Avoid subtracting from non-existent file
         if model_exists?
           inject_into_file "app/models/#{file_name}.rb", after: "class #{class_name} < ApplicationRecord\n" do <<-YELLIN
@@ -33,15 +42,6 @@ module ActiveRecord
          YELLIN
           end
         end
-      end
-
-      def model_exists?
-        File.exist? File.join(destination_root, "app/models", "#{file_name}.rb")
-      end
-
-      def migration_exists?
-        pattern = File.join(destination_root, "db/migrate", "*_add_yellin_to_#{table_name}.rb")
-        Dir.glob(pattern).first
       end
     end
   end
