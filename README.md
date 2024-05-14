@@ -17,13 +17,13 @@ This gem is heavily based on the authentication system developed in Michael Hart
 Yellin provides a generator that takes care of all configuration you need to use it. Run the generator with the name of the user model class you want to use. If the model already exists, it will be updated. Otherwise, it will be created from scratch.
 
 ```bash
-$ rails generate yellin User
+$ rails generate active_record:yellin User
 ```
 
 If you decide Yellin is lame and need to remove it, you can use the normal `destroy` command:
 
 ```bash
-$ rails destroy yellin User
+$ rails destroy active_record:yellin User
 ```
 
 ### Configuration options
