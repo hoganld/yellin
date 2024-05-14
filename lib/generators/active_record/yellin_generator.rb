@@ -15,25 +15,12 @@ module ActiveRecord
       end
 
       def handle_model
-        yellinize_user_model if behavior == :revoke
         unless @preexisting_model
           invoke "active_record:model", [name], migration: false
         end
-        yellinize_user_model if behavior == :invoke
       end
 
       private
-      def yellinize_user_model
-        # Avoid subtracting from non-existent file
-        if model_exists?
-          inject_into_file "app/models/#{file_name}.rb", after: "class #{class_name} < ApplicationRecord\n" do <<-YELLIN
-  include Yellin::ActsAsUser
-  acts_as_user
-         YELLIN
-          end
-        end
-      end
-
       def model_exists?
         File.exist? File.join(destination_root, "app/models", "#{file_name}.rb")
       end
