@@ -1,6 +1,6 @@
 module Yellin
   module Generators
-    module ModelGenerator < Rails::Generators::NamedBase
+    module ModelsGenerator < Rails::Generators::NamedBase
       source_root File.expand_path("templates", __dir__)
 
       def check_preexistence
