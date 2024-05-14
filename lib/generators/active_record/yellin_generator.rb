@@ -8,22 +8,22 @@ module ActiveRecord
       def handle_migration
         @preexisting_model = (behavior == :invoke && model_exists?) || (behavior == :revoke && migration_exists?)
         if @preexisting_model
-          migration_template "migration_update.rb", "db/migrate/add_yellin_to_#{table_name}.rb"
+          migration_template "migration_update_#{table_name}.rb", "db/migrate/add_yellin_to_#{table_name}.rb"
         else
-          migration_template "migration_create.rb", "db/migrate/yellin_create_#{table_name}.rb"
+          migration_template "migration_create_#{table_name}.rb", "db/migrate/yellin_create_#{table_name}.rb"
         end
       end
 
       def handle_model
-        yellinize_model if behavior == :revoke
+        yellinize_user_model if behavior == :revoke
         unless @preexisting_model
           invoke "active_record:model", [name], migration: false
         end
-        yellinize_model if behavior == :invoke
+        yellinize_user_model if behavior == :invoke
       end
 
       private
-      def yellinize_model
+      def yellinize_user_model
         # Avoid subtracting from non-existent file
         if model_exists?
           inject_into_file "app/models/#{file_name}.rb", after: "class #{class_name} < ApplicationRecord\n" do <<-YELLIN

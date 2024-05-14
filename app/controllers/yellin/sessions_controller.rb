@@ -22,5 +22,11 @@ module Yellin
       redirect_to main_app.root_url
     end
 
+    # def sign_out
+    #   # Delete the current session
+    #   @session = Current.session
+    #   destroy
+    # end
+
   end
 end
