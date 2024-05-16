@@ -1,6 +1,6 @@
 class <%= migration_class_name %> < ActiveRecord::Migration[<%= ActiveRecord::Migration.current_version %>]
   def change
-    create_table :<%= table_name %><%= primary_key_type %> do |t|
+    create_table :<%= table_name %> do |t|
       t.string :email
       t.string :password_digest
       t.string :remember_digest

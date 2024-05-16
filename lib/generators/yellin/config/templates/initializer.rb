@@ -26,5 +26,5 @@ Yellin.password_minimum_length = 12
 Yellin.reset_timeout = 20.minutes
 
 # set this to the name of the class implementing the User API
-Yellin.user_class = "User"
+Yellin.user_class = "<%= name %>"
 

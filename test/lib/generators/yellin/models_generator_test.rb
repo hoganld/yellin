@@ -1,10 +1,10 @@
 require 'test_helper'
-require 'generators/active_record/yellin_generator'
+require 'generators/yellin/models/models_generator'
 require 'fileutils'
 
-module ActiveRecord
-  class YellinGeneratorTest < Rails::Generators::TestCase
-    tests ActiveRecord::Generators::YellinGenerator
+module Yellin
+  class ModelsGeneratorTest < Rails::Generators::TestCase
+    tests Yellin::Generators::ModelsGenerator
     destination Rails.root.join('tmp/generators')
 
     setup do

@@ -1,6 +1,6 @@
 module Yellin
   module Generators
-    class ConfigGenerator < Rails::Generators::Base
+    class ConfigGenerator < Rails::Generators::NamedBase
       source_root File.expand_path("templates", __dir__)
 
       def copy_initializer_file
